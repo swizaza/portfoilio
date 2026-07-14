@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiz | Portfolio</title>
+    <style>
+        /* Light Blue / Powder Blue Minimalist Palette */
+        :root {
+            --bg-color: #f4f8fb;       /* Soft powder blue-tinted background */
+            --text-color: #1c252c;     /* Deep slate for crisp text */
+            --muted-color: #5a7385;    /* Medium slate gray */
+            --accent-color: #a7c7e7;   /* Baby/powder blue accent */
+            --border-color: #e2ebf1;   /* Soft ice-blue borders */
+            --hover-opacity: 0.85;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1000px; /* Slightly wider to easily fit 3 columns */
+            margin: 0 auto;
+        }
+
+        /* Centered Header & Navigation */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 80px;
+            border-bottom: 1.5px solid var(--border-color);
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+
+        h1::after {
+            content: '.';
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted-color);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Centered About Section */
+        .about-section {
+            margin: 0 auto 80px auto;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted-color);
+            margin-bottom: 15px;
+        }
+
+        .about-text {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .about-sub {
+            font-size: 1rem;
+            color: var(--muted-color);
+        }
+
+        /* Centered Section Headings */
+        .section-header {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            border-bottom: 1.5px solid var(--border-color);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        /* 3-Column Portfolio Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr; /* Stack vertically on phones */
+                max-width: 400px;
+                margin: 0 auto 80px auto;
+            }
+        }
+
+        .card {
+            text-decoration: none;
+            color: inherit;
+            text-align: center; /* Center the design titles & tags */
+        }
+
+        .card-img-container {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Templates display beautifully in squares */
+            background-color: #ffffff;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the full shirt/pants template details fit */
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: var(--hover-opacity);
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted-color);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Centered Contact Section */
+        .contact-section {
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-link {
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: var(--accent-color);
+        }
+
+        .contact-link:hover {
+            color: var(--muted-color);
+        }
+
+        footer {
+            margin-top: 100px;
+            padding-top: 25px;
+            border-top: 1.5px solid var(--border-color);
+            font-size: 0.75rem;
+            color: var(--muted-color);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <h1>SWIZ</h1>
+            <nav>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- ABOUT ME -->
+        <section class="about-section">
+            <p class="about-title">About Me</p>
+            <p class="about-text">
+                I am a 17-year-old digital artist specializing in <strong>Roblox 2D clothing design</strong>. I create highly detailed, custom outfits designed both from reference images and completely freehand. 
+            </p>
+            <p class="about-text">
+                <strong>I am a remarkably quick worker and can efficiently deliver full sets of clothing in a short turnaround time.</strong>
+            </p>
+            <p class="about-sub">
+                While my primary focus is apparel design, I also have experience creating high-quality GFX.
+            </p>
+        </section>
+
+        <!-- WORK SHOWCASE -->
+        <section id="work">
+            <h2 class="section-header">Selected Work</h2>
+            <div class="grid">
+                
+                <!-- CARD 1 (Uniform Template) -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="swiz-uniform.png" alt="Reference-Based Uniform Template by Swiz">
+                    </div>
+                    <p class="card-meta">2D Clothing • Reference-Based</p>
+                    <p class="card-title">Detailed Uniform Set</p>
+                </div>
+
+                <!-- CARD 2 (Hoodie Template) -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="swiz-hoodie.jpg" alt="Freehand Streetwear Hoodie Template by Swiz">
+                    </div>
+                    <p class="card-meta">2D Clothing • Freehand Pattern</p>
+                    <p class="card-title">BAPE-Style Hoodie</p>
+                </div>
+
+                <!-- CARD 3 (Jeans Template) -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <!-- Points to 'swiz-jeans.jpg' or 'swiz-jeans.png' -->
+                        <img src="swiz-jeans.jpg" alt="Freehand Jeans Template by Swiz">
+                    </div>
+                    <p class="card-meta">2D Clothing • Textured Print</p>
+                    <p class="card-title">Leopard Print Jeans</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT & SOCIALS -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-header">Inquiries & Contact</h2>
+            <p class="about-text">Interested in working together or hiring me for quick, high-quality custom designs?</p>
+            <p class="about-sub">Feel free to reach out via Discord for commission rates, availability, and requests.</p>
+            
+            <div class="contact-links">
+                <p><strong>Discord:</strong> @swizaza</p>
+               
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 SWIZ. Roblox is a registered trademark of Roblox Corporation.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
